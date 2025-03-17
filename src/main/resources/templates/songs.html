@@ -2,20 +2,27 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Movies</title>
+    <th:block th:replace="fragments/head :: head('Best Songs')"></th:block>
 </head>
 
 <body>
 
-    <main>
-        <h1>Best Songs</h1>
+    <header th:replace="fragments/header :: header"></header>
 
-        <ul th:each="song : ${songs}">
-            <li th:text="${song.titolo}"></li>
+    <main class="container d-flex flex-column align-items-center mt-4">
+        <h1 class="text-center mb-4">Best Songs</h1>
+
+        <ul class="list-group w-50">
+            <li th:each="song, iterStat : ${songs}" class="list-group-item text-center">
+                <span class="fw-bold me-2">#<span th:text="${iterStat.index + 1}"></span></span>
+                <a th:href="@{/songs/{id}(id=${song.id})}" class="text-decoration-none">
+                    <span th:text="${song.titolo}"></span>
+                </a>
+            </li>
         </ul>
     </main>
+
+
 
 </body>
 

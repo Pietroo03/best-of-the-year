@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<body>
+
+    <a th:fragment="button(link, title, currentPage)" th:href="${link}" th:text="${title}" class="btn"
+        th:classappend="${currentPage == link} ? 'btn-secondary text-white' : 'btn-outline-secondary'">
+    </a>
+
+
+</body>
+
+</html>

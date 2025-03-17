@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Film</title>
+</head>
+
+<body>
+
+    <main>
+        <h1 th:text="|Questo è il film che cerchi con ID ${id}|"></h1>
+        <div th:if="${movie != null}">
+            <p th:text="|Titolo: ${movie.titolo}|"></p>
+        </div>
+        <div th:unless="${movie != null}">
+            <p>Film non trovato.</p>
+        </div>
+    </main>
+
+
+</body>
+
+</html>

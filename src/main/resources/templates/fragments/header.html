@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<body>
+
+    <header th:fragment="header" class="container py-3 border-bottom">
+        <div class="row align-items-center">
+            <h1 class="col-auto fw-bold border-end border-2 border-dark pe-3">Best of</h1>
+            <div class="col-auto d-flex gap-2">
+                <div th:insert="~{fragments/button :: button('/songs', 'Songs', ${currentPage})}"></div>
+                <div th:insert="~{fragments/button :: button('/movies', 'Movies', ${currentPage})}"></div>
+            </div>
+        </div>
+    </header>
+
+
+</body>
+
+</html>

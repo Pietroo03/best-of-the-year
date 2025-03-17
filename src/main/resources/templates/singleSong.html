@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canzone</title>
+</head>
+
+<body>
+
+    <main>
+        <h1 th:text="|Questo è la canzone che cerchi con ID ${id}|"></h1>
+        <div th:if="${song != null}">
+            <p th:text="|Titolo: ${song.titolo}|"></p>
+        </div>
+        <div th:unless="${song != null}">
+            <p>Canzone non trovata.</p>
+        </div>
+    </main>
+
+
+</body>
+
+</html>
